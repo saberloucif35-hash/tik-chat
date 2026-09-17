@@ -6,7 +6,6 @@ workflows:
     environment:
       node: 22
       xcode: latest
-      cocoapods: default
     scripts:
       - name: Install dependencies
         script: |
@@ -14,14 +13,13 @@ workflows:
       - name: Build web assets
         script: |
           npm run build
-      - name: Generate iOS platform and CocoaPods
+      - name: Generate iOS platform and Sync
         script: |
           npx cap add ios || true
           npx cap sync ios
-          cd ios/App && pod install
-      - name: Build iOS App
+      - name: Build iOS App (SPM)
         script: |
-          xcodebuild build -workspace ios/App/App.xcworkspace -scheme App -configuration Release CODE_SIGNING_ALLOWED=NO -derivedDataPath build
+          xcodebuild build -project ios/App/App.xcodeproj -scheme App -configuration Release CODE_SIGNING_ALLOWED=NO -derivedDataPath build
     artifacts:
       - build/Build/Products/Release-iphoneos/*.app
       - build/Build/Products/Release-iphoneos/*.ipa
