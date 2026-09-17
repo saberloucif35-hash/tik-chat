@@ -14,10 +14,11 @@ workflows:
       - name: Build web assets
         script: |
           npm run build
-      - name: Re-create iOS Platform and Sync
+      - name: Generate iOS platform and CocoaPods
         script: |
           npx cap add ios || true
           npx cap sync ios
+          cd ios/App && pod install
       - name: Build iOS App
         script: |
           xcodebuild build -workspace ios/App/App.xcworkspace -scheme App -configuration Release CODE_SIGNING_ALLOWED=NO -derivedDataPath build
