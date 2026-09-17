@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix Remix YallaChat AI - منصة الغرف الصوتية والألعاب",
+  "description": "تطبيق جوال للغرف الصوتية التفاعلية والألعاب الاجتماعية بنمط داكن أنيق بلمسات زرقاء سماوية وذهبية، مدعوم بنماذج الذكاء الاصطناعي لإدارة الغرفة والألعاب والمشرف الذكي.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

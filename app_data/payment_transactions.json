@@ -1,0 +1,25 @@
+[
+  {
+    "id": "TXN-67464387-9718",
+    "invoiceNumber": "INV-2026-304466",
+    "userId": "test_user",
+    "accountId": "test_user",
+    "userName": "Test User",
+    "packageId": "pkg_coin_1",
+    "packageName": "شحن ياللا لايف الرسمي",
+    "coins": 5000,
+    "diamonds": 0,
+    "totalAmount": 3.75,
+    "subtotal": 3.26,
+    "vatAmount": 0.49,
+    "currency": "SAR",
+    "paymentMethod": "mada",
+    "cardBrand": "Card",
+    "cardLast4": "••••",
+    "status": "COMPLETED",
+    "authCode": "AUTH-KDL9FF",
+    "gateway": "Apple/Google Pay Digital Wallet",
+    "timestamp": "2026-09-17T17:51:04.387Z",
+    "qrTaxData": "ZATCA-E-INVOICE|YALLA_LIVE|INV-2026-304466|2026-09-17T17:51:04.387Z|3.75|0.49"
+  }
+]
