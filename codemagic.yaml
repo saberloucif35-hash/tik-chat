@@ -20,6 +20,10 @@ workflows:
       - name: Build iOS App (SPM)
         script: |
           xcodebuild build -project ios/App/App.xcodeproj -scheme App -configuration Release CODE_SIGNING_ALLOWED=NO -derivedDataPath build
+      - name: Package into IPA
+        script: |
+          mkdir -p build/Payload
+          cp -R build/Build/Products/Release-iphoneos/App.app build/Payload/
+          cd build && zip -r tik-chat.ipa Payload
     artifacts:
-      - build/Build/Products/Release-iphoneos/*.app
-      - build/Build/Products/Release-iphoneos/*.ipa
+      - build/*.ipa
