@@ -1,0 +1,6 @@
+{
+	"appId": "com.tikchat.app",
+	"appName": "tik chat",
+	"webDir": "dist",
+	"packageClassList": []
+}
