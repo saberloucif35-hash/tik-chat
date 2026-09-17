@@ -2,9 +2,9 @@ workflows:
   ios-capacitor:
     name: iOS Capacitor Build
     max_build_duration: 120
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     environment:
-      node: 18.x
+      node: 20
       xcode: latest
       cocoapods: default
     scripts:
@@ -18,9 +18,9 @@ workflows:
         script: |
           npx cap add ios || true
           npx cap sync ios
-      - name: Build iOS app
+      - name: Build iOS App
         script: |
-          xcodebuild build -workspace ios/App/App.xcworkspace -scheme App -configuration Release -derivedDataPath build
+          xcodebuild build -workspace ios/App/App.xcworkspace -scheme App -configuration Release CODE_SIGNING_ALLOWED=NO -derivedDataPath build
     artifacts:
       - build/Build/Products/Release-iphoneos/*.app
       - build/Build/Products/Release-iphoneos/*.ipa
