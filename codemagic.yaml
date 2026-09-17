@@ -11,12 +11,9 @@ workflows:
       - name: Install dependencies
         script: |
           npm install
-      - name: Build web assets
+      - name: Build web assets and Sync
         script: |
           npm run build
-      - name: Add and Sync iOS platform
-        script: |
-          npx cap add ios || true
           npx cap sync ios
       - name: Build iOS App
         script: |
